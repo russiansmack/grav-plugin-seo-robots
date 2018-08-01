@@ -1,0 +1,22 @@
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        seo:
+          type: tab
+          title: SEO
+          fields:
+            header.meta_robots:
+              type: checkboxes
+              label: Robots
+              toggleable: true
+              data-default@: '\Grav\Plugin\TinyseoPlugin::defaultRobotsMeta'
+              options:
+                index: index
+                follow: follow
+                noindex: noindex
+                nofollow: nofollow
+                noimageindex: noimageindex
+              use: keys
