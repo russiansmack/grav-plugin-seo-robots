@@ -1,4 +1,4 @@
-name: "SEO - Robots Addon"
+name: "seo-robots"
 version: "1.0.0"
 description: "Provide a simple way to manage robots from admin."
 icon: "sitemap"
@@ -14,42 +14,34 @@ dependencies:
 form:
   validation: strict
   fields:
-    tabs:
-      type: tabs
-      active: 1
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    robots_section:
+      type: section
+      title: Robots
+      underline: true
       fields:
-        content:
-          type: tab
-          title: Content
-          fields:
-            enabled:
-              type: toggle
-              label: PLUGIN_ADMIN.PLUGIN_STATUS
-              highlight: 1
-              default: 1
-              options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool
-            robots_section:
-              type: section
-              title: Robots
-              underline: true
-              fields:
-                meta_robots:
-                  type: checkboxes
-                  label: PLUGIN_TINYSEO.ROBOT
-                  default:
-                    index: true
-                    follow: true
-                    noindex: false
-                    nofollow: false
-                    noimageindex: false
-                  options:
-                    index: index
-                    follow: follow
-                    noindex: noindex
-                    nofollow: nofollow
-                    noimageindex: noimageindex
-                  use: keys
+        meta_robots:
+          type: checkboxes
+          label: Directives
+          default:
+            index: true
+            follow: true
+            noindex: false
+            nofollow: false
+            noimageindex: false
+          options:
+            index: index
+            follow: follow
+            noindex: noindex
+            nofollow: nofollow
+            noimageindex: noimageindex
+          use: keys

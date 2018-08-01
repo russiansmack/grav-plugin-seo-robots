@@ -85,7 +85,7 @@ class SeoRobotsPlugin extends Plugin
   {
     static $inEvent = false;
 
-    // Add Tinyseo tab if page is not a modular
+    // Add tab if page is not a modular
     if (0 !== strpos($event['type'], 'modular/')) {
       $blueprint = $event['blueprint'];
 
@@ -116,8 +116,8 @@ class SeoRobotsPlugin extends Plugin
       $pageMetaRobotsEnabled = isset($header->meta_robots) ? metaRobotsEnabled($header->meta_robots) : false;
       $pluginMetaRobotsEnabled = metaRobotsEnabled($config['meta_robots']);
 
-      // If Tinseo have page wide meta robots use it
-      // Else if Tinyseo have site wide meta robots use it
+      // If we have page wide meta robots use it
+      // Else if there are site wide meta robots use it
       if ($pageMetaRobotsEnabled) $metaRobots = $header->meta_robots;
       elseif ($pluginMetaRobotsEnabled) $metaRobots = $config['meta_robots'];
 
@@ -145,7 +145,7 @@ class SeoRobotsPlugin extends Plugin
     $page = Grav::instance()['admin']->page(true);
     $meta = $page->metadata();
 
-    // Default meta robots from Tinyseo config
+    // Default meta robots from config
     $meta_robots = $config['plugins.seo-robots.meta_robots'];
 
     // If page have meta robots
