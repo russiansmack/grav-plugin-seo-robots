@@ -6,9 +6,9 @@ author:
   name: russiansmack
 keywords: 'grav, plugin, seo'
 license: MIT
-homepage: 'https://github.com/jimblue/grav-plugin-tinyseo'
-bugs: 'https://github.com/jimblue/grav-plugin-tinyseo/issues'
-docs: 'https://github.com/jimblue/grav-plugin-tinyseo/blob/master/README.md'
+homepage: 'https://github.com/russiansmack/grav-plugin-seo-robots'
+bugs: 'https://github.com/russiansmack/grav-plugin-seo-robots/issues'
+docs: 'https://github.com/russiansmack/grav-plugin-seo-robots/blob/master/README.md'
 dependencies:
   - admin
 form:
